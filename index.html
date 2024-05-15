@@ -12,6 +12,7 @@
     <title>Music Player</title>
 </head>
 <body>
+    <audio id="Song" src="./Musics/Mine.mp3"></audio>
     <div class="Main">
 
         <div class="MusicCard">
@@ -19,7 +20,7 @@
             <h3 class="songArtist">Artist 1</h3>
             <div class="Image"></div>
         </div>
-            <input type="range" min="0" max="100">
+            <input id="seekBar" type="range" min="0" max="100">
             
             <div style="display: flex; flex-direction: row; width: 100%; justify-content: space-between;" class="duration">
                 <div class="currDuration">00.00</div>
@@ -27,10 +28,10 @@
             </div>
         
         <div class="Controls">
-            <button><ion-icon name="play-skip-forward-outline"></ion-icon></button>
-            <button id="Play"><ion-icon name="play-outline"></ion-icon></button>
-            <button id="Pause" style="display: none;"><ion-icon name="pause-outline"></ion-icon></button>
-            <button><ion-icon name="play-skip-back-outline"></ion-icon></button>
+            <button onclick="PrevSong()" id="PrevSong"><ion-icon name="play-skip-forward-outline"></ion-icon></button>
+            <button onclick="PlaySong()" id="Play"><ion-icon name="play-outline"></ion-icon></button>
+            <button onclick="PauseSong()" id="Pause" style="display: none;"><ion-icon name="pause-outline"></ion-icon></button>
+            <button onclick="NextSong()" id="NextSong"><ion-icon name="play-skip-back-outline"></ion-icon></button>
         </div>
 
     </div>
