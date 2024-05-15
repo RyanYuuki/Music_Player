@@ -7,25 +7,30 @@ const MusicCardElmt = document.getElementsByClassName("MusicCard")[0];
 const MusicList = [
     {
         name: "Mine",
-        source: "./Musics/Mine.mp3",
-        artistName: "Bazzi"
+        source: "Musics/Mine.mp3",
+        artistName: "Bazzi",
+        imgSource: "./MusicCovers/1.png"
     },
     {
         name: "Beautiful",
-        source: "./Musics/Beautiful.mp3",
-        artistName: "Bazzi"
+        source: "Musics/Beautiful.mp3",
+        artistName: "Bazzi",
+        imgSource: "./MusicCovers/2.jpeg"
     },
     {
         name: "Hurts So Good",
         source: "./Musics/Hurts So Good.mp3",
-        artistName: "Alyssa"
+        artistName: "Alyssa",
+        imgSource: "./MusicCovers/3.jpg"
     },
     {
         name: "Runaway",
         source: "./Musics/Runaway.mp3",
-        artistName: "Aurora"
+        artistName: "Aurora",
+        imgSource: "./MusicCovers/4.png"
     },
 ];
+const musicCoverElmt = document.getElementById("Image");
 const rangeElmt = document.getElementById("seekBar");
 const songElmt = document.getElementById("Song");
 let index = 0;
@@ -36,7 +41,7 @@ function PlaySong() {
     MusicCardElmt.innerHTML = `
     <h1 class="songTitle">${MusicList[index].name}</h1>
     <h3 class="songArtist">${MusicList[index].artistName}</h3>
-    <div class="Image"></div>
+    <div style="background-image: url('${MusicList[index].imgSource}');" id="Image" class="Image"></div>
     `
     
     setInterval(function () {
