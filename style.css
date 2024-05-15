@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    transition: all 0.5s ease-in-out;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #76b947a9;
+}
+
+.Main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 300px;
+    padding: 10px 20px;
+    gap: 20px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(50px);
+    color: white;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.1);
+}
+
+.Main .MusicCard {
+    height: 55%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 30px;
+}
+
+.MusicCard .Image {
+    height: 60%;
+    width: 40%;
+    border: 1px solid;
+    border-radius: 100px;
+}
+
+.Main .SeekBar {
+    width: 100%;
+}
+
+
+input[type="range"] {
+    height: 1px;
+    width: 100%;
+    border-radius: 50px;
+    -webkit-appearance: none;
+}
+
+.Main .Controls {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.Controls button {
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 50px;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(255, 255, 255, 0.1);
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.Controls #Play {
+    height: 80px;
+    width: 80px;
+}
+
+.Controls button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.Controls button:active {
+    transform: scale(0.2);
+}
