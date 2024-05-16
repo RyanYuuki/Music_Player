@@ -55,10 +55,17 @@ const songElmt = document.getElementById("Song");
 let index = 0;
 let isShuffled = false;
 let isLooping = false;
+let colorAccent;
 function PlaySong() {
     colorjs.prominent(`${MusicList[index].imgSource}`, { amount: 1 }).then(color => {
         document.getElementById("seekBar").style.backgroundColor = `rgb(${color.toString()})`;
-        console.log(color.toString());
+        colorAccent = `rgb(${color.toString()},0.4)`;
+        if (LoopOn == 1) {
+            document.getElementById("Loop").style.backgroundColor = colorAccent;
+        }
+        if (ShuffleOn == 1) {
+            document.getElementById("Shuffle").style.backgroundColor = colorAccent;
+        }
     });
     songElmt.play();
     playElmt.style.display = "none";
@@ -99,7 +106,6 @@ function PlaySong() {
         else {
             NextSong();
         }
-
     });
 }
 
@@ -131,14 +137,21 @@ function NextSong() {
 
 function PrevSong() {
     index--;
-    if (index < 0) {
-        index = MusicList.length - 1;;
+    if (isShuffled) {
+        index = Math.floor(Math.random() * MusicList.length) + 1;
         songElmt.src = MusicList[index].source;
         PlaySong();
     }
     else {
-        songElmt.src = MusicList[index].source;
-        PlaySong();
+        if (index < 0) {
+            index = MusicList.length - 1;;
+            songElmt.src = MusicList[index].source;
+            PlaySong();
+        }
+        else {
+            songElmt.src = MusicList[index].source;
+            PlaySong();
+        }
     }
 }
 
@@ -153,7 +166,7 @@ function ShuffleSong() {
         isShuffled = false;
     }
     else {
-        document.getElementById("Shuffle").style.backgroundColor = "black";
+        document.getElementById("Shuffle").style.backgroundColor = colorAccent;
         document.getElementById("Shuffle").style.color = "white";
         isShuffled = true;
     }
@@ -167,7 +180,7 @@ function LoopSong() {
         isLooping = false;
     }
     else {
-        document.getElementById("Loop").style.backgroundColor = "black";
+        document.getElementById("Loop").style.backgroundColor = colorAccent;
         document.getElementById("Loop").style.color = "white";
         isLooping = true;
     }
