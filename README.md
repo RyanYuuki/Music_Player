@@ -1,6 +1,6 @@
 **Awesome Music Player**
 
-![Music Player](https://ryanyuuki.github.io/Music_Player/index.html)
+[Music Player](https://ryanyuuki.github.io/Music_Player/index.html)
 
 This is a simple and elegant music player built using HTML, CSS, and JavaScript. It comes with a collection of handpicked tracks to enhance your listening experience. With a sleek design and intuitive controls, it offers both functionality and aesthetics.
 
