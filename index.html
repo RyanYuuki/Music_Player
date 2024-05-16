@@ -20,22 +20,26 @@
             <h3 class="songArtist">Artist 1</h3>
             <div id="Image" class="Image"></div>
         </div>
-            <input id="seekBar" type="range" min="0" max="100">
-            
+
+            <div id="progress-bar" class="progress-bar">
+                <div id="seekBar" class="progress"></div>
+            </div>
             <div style="display: flex; flex-direction: row; width: 100%; justify-content: space-between;" class="duration">
                 <div class="currDuration">00.00</div>
                 <div class="fullDuration">03.09</div>
             </div>
         
         <div class="Controls">
+            <button onclick="LoopSong()" id="Loop"><ion-icon name="infinite-outline"></ion-icon></button>
             <button onclick="PrevSong()" id="PrevSong"><ion-icon name="play-skip-forward-outline"></ion-icon></button>
             <button onclick="PlaySong()" id="Play"><ion-icon name="play-outline"></ion-icon></button>
             <button onclick="PauseSong()" id="Pause" style="display: none;"><ion-icon name="pause-outline"></ion-icon></button>
             <button onclick="NextSong()" id="NextSong"><ion-icon name="play-skip-back-outline"></ion-icon></button>
+            <button onclick="ShuffleSong()" id="Shuffle"><ion-icon name="shuffle-outline"></ion-icon></button>
         </div>
 
     </div>
-    
+    <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>    
     <script src="main.js"></script>
 </body>
 </html>
